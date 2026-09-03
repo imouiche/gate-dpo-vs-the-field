@@ -4,14 +4,14 @@
 globally-scheduled — measured on the same protocol, across four model architectures spanning 0.5B to 7B
 parameters.**
 
-> This repository presents a self-contained slice of results from an ongoing research project on
-> mitigating the *squeezing effect* in off-policy DPO training — the tendency for training too long to
-> make even the chosen response less likely. The full paper is currently under revision for resubmission,
-> so this repo is intentionally kept private for now; the analysis and code shown here are complete and
-> stand on their own.
+> This repository presents a self-contained slice of results from **Gradient-Gated DPO: Stabilizing
+> Preference Optimization in Language Models** — a project on mitigating the *squeezing effect* in
+> off-policy DPO training, the tendency for training too long to make even the chosen response less
+> likely. This repo extends the paper's results with an additional architecture (Qwen1.5-7B) and two
+> further base losses (IPO, Cal-DPO) trained beyond what's in the current preprint.
 
-**[→ Interactive version of this comparison](https://claude.ai/code/artifact/6908ffbf-7781-453f-a573-897fd7470b3c)** —
-same data, with sortable detail and a live rendering of the chart below.
+**Paper:** [arXiv:2605.02626](https://arxiv.org/abs/2605.02626)
+**Interactive comparison:** [claude.ai/code/artifact/…](https://claude.ai/code/artifact/6908ffbf-7781-453f-a573-897fd7470b3c) — same data, with sortable detail and a live rendering of the chart below.
 
 ## The question
 
@@ -153,6 +153,19 @@ just isn't a meaningful signal for this particular method.
   in parameter count, on both a purpose-built decoder-only model (Pythia) and two independently-trained
   model families (Qwen, LLaMA).
 - **Compute**: all runs trained on a single A100-80GB per job via [Modal](https://modal.com).
+
+## Citation
+
+```bibtex
+@misc{mouiche2026gatedpo,
+  title  = {Gradient-Gated DPO: Stabilizing Preference Optimization in Language Models},
+  author = {Mouiche, Inoussa},
+  year   = {2026},
+  eprint = {2605.02626},
+  archivePrefix = {arXiv},
+  url    = {https://arxiv.org/abs/2605.02626}
+}
+```
 
 ---
 
