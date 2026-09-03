@@ -10,6 +10,9 @@ parameters.**
 > so this repo is intentionally kept private for now; the analysis and code shown here are complete and
 > stand on their own.
 
+**[→ Interactive version of this comparison](https://claude.ai/code/artifact/6908ffbf-7781-453f-a573-897fd7470b3c)** —
+same data, with sortable detail and a live rendering of the chart below.
+
 ## The question
 
 When a DPO-style method reduces "squeezing" (destructive redistribution of probability mass away from
@@ -31,6 +34,8 @@ the needle off the plain DPO baseline anywhere.
 
 Δ Chosen (change in the chosen response's log-probability from the first to the last evaluation
 checkpoint) by method, per architecture:
+
+![Delta Chosen by method, per architecture — gated methods cluster high and positive, ungated methods scatter low or negative](delta-chosen-strip-chart.svg)
 
 | | Ungated range (DPO / IPO / Cal-DPO / DPO-Shift) | Gated range (any base loss) |
 |---|---|---|
